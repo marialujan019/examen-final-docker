@@ -1,0 +1,51 @@
+services:
+  api:
+    image: marialujan19/api-secure:1.0.1
+    container_name: api-secure
+    ports:
+      - "8000:8000"
+    networks:
+      - internal
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  frontend:
+    image: marialujan19/frontend-secure:1.0.2
+    container_name: frontend-secure
+    ports:
+      - "8080:8080"
+    depends_on:
+      - api
+    networks:
+      - internal
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  db:
+    image: marialujan19/db-secure:1.0.0
+    container_name: db-secure
+    env_file:
+      - .env
+    networks:
+      - internal
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  internal:
+    driver: bridge
+    internal: true
+
+volumes:
+  pgdata:
+
+
