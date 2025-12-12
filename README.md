@@ -33,6 +33,14 @@ docker compose up -d
 docker ps
 ```
 
+## Variables de entorno (DB ilustrativa)
+Crear un archivo `.env` (no se sube al repo) con:
+
+POSTGRES_USER=<tu_usuario>
+POSTGRES_PASSWORD=<tu_password>
+POSTGRES_DB=<tu_db>
+
+
 ## Acceso a las aplicaciones
 - Frontend:	http://localhost:8080
 - API Backend:	http://localhost:8000/health
