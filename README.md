@@ -56,3 +56,6 @@ Crear un archivo `.env` (no se sube al repo) con:
 - Frontend: https://hub.docker.com/repository/docker/marialujan19/frontend-secure/tags/1.0.2
 - DB: https://hub.docker.com/repository/docker/marialujan19/db-secure/tags/1.0.0
 
+## Entregable 4: Kubernetes Manifests
+Este repositorio también incluye los manifiestos necesarios para desplegar el mismo stack en Kubernetes.
+- Los archivos de Kubernetes y el readme correspondiente se encuentran en la carpeta `k8s/`.
